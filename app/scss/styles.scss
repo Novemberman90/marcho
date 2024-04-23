@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -136,13 +137,9 @@
     }
   }
   &__form-btn {
+    @extend %btn;
     border: none;
-    background-color: $accent;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 12px 26px;
-      box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
-      cursor: pointer;
+    cursor: pointer;
   }
 }
 
@@ -159,9 +156,94 @@
   }
 }
 
+.top-slider {
+  background-image: url('../images/top-slider.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 45px;
+  /* поскольку я исползую слик, то стыкаюсь с типичной проблемой, что часть дикоративного элемента ( в моём случае тень) выглядывает из-за контйнера. Чтобы это решить мне нужен модификатор для контейнера где находится слайдер. Я сделаю сам контейнер шире */
+  &__container {
+    max-width: 1560px;
+  }
+  &__content {
+    padding-left: 175px;
+    padding-top: 125px;
+  }
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+    /* вместо !important в таких случая лучше задать дополнительную обертку внутри __item и ему уже диспей флекс*/
+  }
+  &__title {
+    max-width: 670px;
+    color: $title;
+    font-size: 58px;
+    line-height: 68px;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+  }
+  &__text {
+    max-width: 470px;
+    margin-bottom: 55px;
+  }
+  &__link {
+    @extend %btn;
+    padding: 14px 36px;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    li {
+      padding: 0 5px;
+      line-height: 0;
+      /* а то без высоты строки 0 не совсем по центру стоит точка */
+      button {
+        padding: 0;
+        background-color: transparent;
+        font-size: 0;
+        width: 26px;
+        height: 26px;
+        /* высоту и ширину круглому объёкту лучше задавать четныси чисталми иначе браузеру сложно высчитать и это влияет на позиционирование */
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          /* это вся комбинация, чтобы точки поставить по центру кнопки */
+        }
+      }
+      &.slick-active {
+        button {
+          border-color: $accent;
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
 
-
-
+.Dot_active_dot {
+  border-radius: 50%;
+  background-color: rgb(254, 62, 87);
+  position: absolute;
+  left: 911px;
+  top: 752px;
+  width: 6px;
+  height: 6px;
+  z-index: 469;
+}
 
 
 
