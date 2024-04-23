@@ -1,12 +1,32 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   color: $default;
   font-size: 16px;
   line-height: 26px;
   @extend %quicksand-500;
+  display: flex;
+  flex-direction: column;
+  /* html,body здана высота, чтобы прижать футтер к низу. Это один из методов, а боди нудно дать флекс и колумн*/
+}
+
+.main {
+  flex-grow: 1; /* так мейн прижимает футер к низу сколько бы контента не было.
+  Для удобства если сайт имеет несколько страниц, то эту станичку можна сделать, как шабло и дальше её копировать и заполнять сам мейн */
 }
 
 .container {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+a {
+  color: $default;
+  font-size: 16px;
+  line-height: 26px;
+  @extend %quicksand-500;
 }
