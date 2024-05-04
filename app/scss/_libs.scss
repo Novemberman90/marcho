@@ -3,4 +3,5 @@
 @import '../../node_modules/rateyo/src/jquery.rateyo';
 @import '../../node_modules/ion-rangeslider/css/ion.rangeSlider';
 @import '../../node_modules/jquery-form-styler/dist/jquery.formstyler';
+/* @import '../../node_modules/jquery-form-styler/dist/jquery.formstyler.theme'; */
 //@import '../../node_modules/jquery-form-styler/dist/jquery.formstyler.theme'; чтобы полностью удалить нужно в папке стилей удалить style.min.css он при новом запуске Галпа создаца только уже без этих свойств formstyler.theme т.к. после он нужен только на моент когда создаем стили для селекта
