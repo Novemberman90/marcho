@@ -1,0 +1,12 @@
+/* .top заготовка для других страничек типа Логина */
+.top {
+  &__container {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 120px 130px;
+    text-align: center;
+  }
+}
