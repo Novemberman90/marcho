@@ -3,6 +3,10 @@ $(function() {
     $('.menu__list').toggleClass('menu__list--active');
   });
 
+  $('.shop__filter-btn').on('click', function () {
+    $('.shop__filters').slideToggle()
+  })
+
   $('.footer-top__title').on('click', function() {
     $(this).next().slideToggle();/*siblings - найдёт соседний элемент и next тоже и в нашем случае его откроет, а если добавить доп.класы, то будет работать более точно*/
     /* $('.footer-top__list').slideToggle(); */
@@ -38,6 +42,14 @@ $(function() {
     draggable: false,
     arrows: false,
     fade: true,
+    responsive: [
+      {
+        breakpoint: 1051,
+        settings: {
+          draggable: true,
+        }
+      }
+    ]
   });
 /* два слайдера соединены в один .product-slide__thumb с product-slide__big */
 
@@ -47,10 +59,12 @@ $(function() {
   });
 
   $('.button-list').on('click', function () {
-    $('.product-item').addClass('product-item--list')
+    $('.product-item').addClass('product-item--list');
+    $('.shop-content__inner').addClass('shop-content__nogrid');
   });
   $('.button-grid').on('click', function () {
-    $('.product-item').removeClass('product-item--list')
+    $('.product-item').removeClass('product-item--list');
+     $('.shop-content__inner').removeClass('shop-content__nogrid');
   });
 
   $('.select-style, .product-one__item-num').styler({});

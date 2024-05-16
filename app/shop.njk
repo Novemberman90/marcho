@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/shop.min.css">
+  <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
 {%include 'app/modul/_header/_header.html'%}
@@ -14,8 +15,10 @@
     <section class="shop">
       <div class="container">
         <div class="shop__inner">
+            <button class="shop__filter-btn" type="submit">
+              <img src="images/icon/filter-solid.svg" alt="filter icon">
+            </button>
           <div class="shop__filters filter">
-
             <div class="filter-search filter__item">
               <h3 class="filter__title">Search</h3>
               <form class="filter-search__form" action="#">
